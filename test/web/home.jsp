@@ -12,7 +12,20 @@
         <title>Projeto 02 - POO</title>
     </head>
     <body>
-        <h1>Integrantes: Gabriel Reverte e Mirelle </h1>
-        <h2><a href="amortizacao-constante.jsp">Amortização Constante</a></h2> 
+       
+        <h2>Integrantes: Gabriel Reverte e Mirelle Gushomoto </h2>
+         <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <h3>Amortização Constante:</h3>
+            <p>A Tabela SAC é o sistema de amortização
+            <br> no qual as parcelas tem valores decrescentes.
+            <br> É muito utilizado em financiamentos de imóveis.</p> 
+            <br>
+       
+        <h3>Amortização Americana:</h3>
+        <p>O Sistema de Amortização Americano é uma<br>
+            forma de pagamento de empréstimos que se<br>
+            caracteriza pelo pagamento apenas dos juros<br>
+            da dívida,deixando o valor da dívida constante<br>
+            que pode ser paga em apenas um único pagamento.</p>
     </body>
 </html>
