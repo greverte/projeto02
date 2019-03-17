@@ -25,37 +25,55 @@
         </form>
         
         <% if(request.getParameter("form")!=null) { %>
-            <% int valor = Integer.parseInt(request.getParameter("valorfinanciado"));%>
+            <% double valor = Double.parseDouble(request.getParameter("valorfinanciado"));%>
             <% int meses = Integer.parseInt(request.getParameter("numeromeses"));%>
             <% double taxa = Double.parseDouble(request.getParameter("taxadejuros"));%>
             
          
         
-        <% taxa = taxa/100;%>
+        
+        
+       <%DecimalFormat df = new DecimalFormat("#,##0.00");%>
+       
         
         <%int x = 0;%>
-         
-         <%DecimalFormat df = new DecimalFormat("#0.00");%> 
         
+        
+         
+         
+         
+        <% taxa = taxa/100;%>
         <% double amortizacao = valor/meses;%>
         
          
-        <table border="i">
+        <br><br><table border="i">
             <tr>
+                <td>###</td>
                 <td>Parcelas</td>
-                <td>Valores</td>
+                <td>Amortizações</td>
+                <td>Juros</td>
+                <td>Saldo Devedor</td>
+                
             </tr>
         <% for (int i=1; i <= meses; i++ ) {%>
         
-        <%x++;%>
-    <tr> 
         
+    <tr> 
    
         <td> <%=i%> </td>
-        <td> <%=(amortizacao+(taxa*(valor-x*amortizacao)))%></td>
-     
+       <td><%=df.format((amortizacao + taxa*(valor-x*amortizacao)))%></td>
+       <td><%=df.format((amortizacao))%></td>
+       <td><%=df.format((valor*taxa))%></td>
+       <td><%=df.format((valor-amortizacao))%></td>
+           
+       <%x++;%>
+       
+       <%valor = valor - amortizacao;%>
+  
+       
     </tr>
-        
+    
+   
     
        
         <%}%>
