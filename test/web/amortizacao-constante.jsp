@@ -28,22 +28,17 @@
             <% double valor = Double.parseDouble(request.getParameter("valorfinanciado"));%>
             <% int meses = Integer.parseInt(request.getParameter("numeromeses"));%>
             <% double taxa = Double.parseDouble(request.getParameter("taxadejuros"));%>
-            
-         
-        
-        
+          
         
        <%DecimalFormat df = new DecimalFormat("#,##0.00");%>
        
         
         <%int x = 0;%>
-        
-        
-         
-         
-         
+        <%double totalparcela = 0;%>
+        <%double totaljuro = 0;%>
         <% taxa = taxa/100;%>
         <% double amortizacao = valor/meses;%>
+        <% double outrovalor = valor;%>
         
          
         <br><br><table border="i">
@@ -61,22 +56,25 @@
     <tr> 
    
         <td> <%=i%> </td>
-       <td><%=df.format((amortizacao + taxa*(valor-x*amortizacao)))%></td>
+       <td><%=df.format(amortizacao + (taxa * (valor - (x * amortizacao))))%></td>
        <td><%=df.format((amortizacao))%></td>
-       <td><%=df.format((valor*taxa))%></td>
-       <td><%=df.format((valor-amortizacao))%></td>
-           
+       <td><%=df.format((outrovalor*taxa))%></td>
+       <td><%=df.format((outrovalor-amortizacao))%></td>
+       
+       
+       <%totalparcela = totalparcela + (amortizacao + (taxa * (valor - (x * amortizacao))));%>
+       <%totaljuro = totaljuro + (outrovalor*taxa);%>
+       <%outrovalor = outrovalor - amortizacao;%>
+       
        <%x++;%>
-       
-       <%valor = valor - amortizacao;%>
-  
-       
     </tr>
-    
-   
-    
-       
-        <%}%>
+  <%}%>
+  
+  <td>TOTAL </td>
+  <td><%=totalparcela%></td>
+  <td></td>
+  <td><%=totaljuro%></td>
+  <td></td>
         </table>
         <%}%>
         
