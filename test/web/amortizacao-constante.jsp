@@ -43,11 +43,11 @@
          
         <br><br><table border="i">
             <tr>
-                <td>###</td>
-                <td>Parcelas</td>
-                <td>Amortizações</td>
-                <td>Juros</td>
-                <td>Saldo Devedor</td>
+                <td align="center" valign="middle">Mês</td>
+                <td align="center" valign="middle">Parcelas</td>
+                <td align="center" valign="middle">Amortizações</td>
+                <td align="center" valign="middle">Juros</td>
+                <td align="center" valign="middle">Saldo Devedor</td>
                 
             </tr>
         <% for (int i=1; i <= meses; i++ ) {%>
@@ -55,11 +55,11 @@
         
     <tr> 
    
-        <td> <%=i%> </td>
-       <td><%=df.format(amortizacao + (taxa * (valor - (x * amortizacao))))%></td>
-       <td><%=df.format((amortizacao))%></td>
-       <td><%=df.format((outrovalor*taxa))%></td>
-       <td><%=df.format((outrovalor-amortizacao))%></td>
+        <td align="center" valign="middle"> <%=i%> </td>
+       <td align="center" valign="middle"><%=df.format(amortizacao + (taxa * (valor - (x * amortizacao))))%></td>
+       <td align="center" valign="middle"><%=df.format((amortizacao))%></td>
+       <td align="center" valign="middle"><%=df.format((outrovalor*taxa))%></td>
+       <td align="center" valign="middle"><%=df.format((outrovalor-amortizacao))%></td>
        
        
        <%totalparcela = totalparcela + (amortizacao + (taxa * (valor - (x * amortizacao))));%>
@@ -70,11 +70,11 @@
     </tr>
   <%}%>
   
-  <td>TOTAL </td>
-  <td><%=totalparcela%></td>
-  <td></td>
-  <td><%=totaljuro%></td>
-  <td></td>
+  <td align="center" valign="middle">TOTAL </td>
+  <td align="center" valign="middle"><%=totalparcela%></td>
+  <td align="center" valign="middle"></td>
+  <td align="center" valign="middle"><%=totaljuro%></td>
+  <td align="center" valign="middle"></td>
         </table>
         <%}%>
         

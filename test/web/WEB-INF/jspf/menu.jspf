@@ -6,5 +6,4 @@ MENU ||
 <a href="home.jsp">HOME</a>
 <a href="amortizacao-constante.jsp">AMORTIZACAO CONSTANTE</a>
 <a href="amortizacao-americana.jsp">AMORTIZACAO AMERICANA</a>
-<a href="tabela-price.jsp">TABELA</a>
-
+<a href="tabela-price.jsp">TABELA PRICE</a>

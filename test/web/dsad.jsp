@@ -1,23 +1,8 @@
-<%-- 
-    Document   : amortizacao-americana.jsp
-    Created on : 17/03/2019, 15:00:33
-    Author     : gabri
---%>
-
-<%@page import="java.text.DecimalFormat"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Projeto - 02</title>
-    </head>
-    <body>
-        <%@include file="WEB-INF/jspf/menu.jspf" %>
-        <h1>AmortizaÃ§Ã£o Americana</h1>
+<%@include file="WEB-INF/jspf/menu.jspf" %>
+        <h1>Amortização Americana</h1>
         <form>
             Valor financiado:<br> <input type="text" name="valorfinanciado"/><br><br>
-            NÃºmero de meses:<br> <input type="text" name="numeromeses"/><br><br>
+            Número de meses:<br> <input type="text" name="numeromeses"/><br><br>
             Taxa de juros:<br> <input type="text" name="taxadejuros"/><br><br>
             <input type="submit" name="form" value="enviar"/>
         </form>
@@ -34,9 +19,9 @@
            
             <br><br><table border="i">
             <tr>
-                <td align="center" valign="middle">MÃªs</td>
+                <td align="center" valign="middle">Mês</td>
                 <td align="center" valign="middle">Parcelas</td>
-                <td align="center" valign="middle">AmortizaÃ§Ãµes</td>
+                <td align="center" valign="middle">Amortizações</td>
                 <td align="center" valign="middle">Juros</td>
                 <td align="center" valign="middle">Saldo Devedor</td>
                 
@@ -82,4 +67,3 @@
     
     
     </body>
-</html>
