@@ -1,0 +1,9 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<style>
+      .header {
+        height: 70px;
+        padding: 20px ;
+        background: #e1e1e1;
+        }
+</style>
