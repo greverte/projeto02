@@ -31,6 +31,8 @@
             
             <% taxa = taxa/100; %>
             <% double somajuros = 0;%>
+            <% int x = 0;%>
+            <% double ultima = 0;%>
            
             <br><br><table border="i">
             <tr>
@@ -42,7 +44,7 @@
                 
             </tr>
             
-            <% for (int i=1; i <= meses; i++ ) {%>
+            <% for (int i=1; i < meses; i++ ) {%>
             
             <tr>
                 <td align="center" valign="middle" ><%=i%></td>
@@ -52,24 +54,24 @@
                 <td align="center" valign="middle"><%= df.format (valor) %> </td>
                 
                </tr>
-               
-                    
-                    
-               
-               
-               
-               <%somajuros = somajuros + (valor * taxa);%>
-               
+          
+               <%somajuros = somajuros + (valor * taxa) ;%>
+               <%x = i;%>
+               <% ultima = valor + (valor * taxa);%>
                 <%}%>
-            
-            
-            
-            
-           
-            
-            
-            
-            
+                
+               <% somajuros = somajuros +(valor *  taxa);%>
+                <tr>
+                <td align="center" valign="middle"><%=x+1%></td>
+                <td align="center" valign="middle"><%= df.format(ultima)%></td>
+                <td align="center" valign="middle"><%= df.format(valor)%></td>
+                <td align="center" valign="middle"><%= df.format(valor * taxa)%>
+                <td align="center" valign="middle"><%= "0,00"%>
+                    
+                </tr>
+                
+                
+                
             <td>TOTAL</td>
             <td align="center" valign="middle"><%= df.format((valor + (meses *(valor*taxa))))%></td>
             <td align="center" valign="middle"><%= df.format(valor)%></td>
