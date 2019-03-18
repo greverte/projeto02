@@ -93,9 +93,6 @@ input[type=submit] {
             <% int x = 0;%>
             <% double ultima = 0;%>
            
-            
-                             
-
             <br><br>
             
                <table id="t01">
@@ -113,17 +110,18 @@ input[type=submit] {
             <% for (int i=1; i < meses; i++ ) {%>
             
             <tr>
-                <td align="center" valign="middle" ><%=i%></td>
-                <td align="center" valign="middle"><%= df.format (valor * taxa)%> </td>
-                <td align="center" valign="middle"><%= "-" %></td> 
-                <td align="center" valign="middle"><%= df.format (valor * taxa) %> </td>
-                <td align="center" valign="middle"><%= df.format (valor) %> </td>
+                <td align="center" valign="middle" ><%=i%></td> <%//índice%>
+                <td align="center" valign="middle"><%= df.format (valor * taxa)%> </td> <%//parcela%>
+                <td align="center" valign="middle"><%= "-" %></td>  <%//amortizacao%>
+                <td align="center" valign="middle"><%= df.format (valor * taxa) %> </td> <%//juros%>
+                <td align="center" valign="middle"><%= df.format (valor) %> </td> <%// saldo devedor%>
                 
-               </tr>
+            </tr>
           
                <%somajuros = somajuros + (valor * taxa) ;%>
                <%x = i;%>
                <% ultima = valor + (valor * taxa);%>
+               
                 <%}%>
                 
                <% somajuros = somajuros +(valor *  taxa);%>

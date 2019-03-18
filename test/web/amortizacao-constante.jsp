@@ -110,16 +110,16 @@ input[type=submit] {
         
     <tr> 
    
-        <td align="center" valign="middle"> <%=i%> </td>
-       <td align="center" valign="middle"><%=df.format(amortizacao + (taxa * (valor - (x * amortizacao))))%></td>
-       <td align="center" valign="middle"><%=df.format((amortizacao))%></td>
-       <td align="center" valign="middle"><%=df.format((outrovalor*taxa))%></td>
-       <td align="center" valign="middle"><%=df.format((outrovalor-amortizacao))%></td>
+        <td align="center" valign="middle"> <%=i%> </td> <%//índice%>
+       <td align="center" valign="middle"><%=df.format(amortizacao + (taxa * (valor - (x * amortizacao))))%></td> <%//parcela%>
+       <td align="center" valign="middle"><%=df.format((amortizacao))%></td> <%//amortizacao%>
+       <td align="center" valign="middle"><%=df.format((outrovalor*taxa))%></td> <% //juros %>
+       <td align="center" valign="middle"><%=df.format((outrovalor-amortizacao))%></td> <% // saldo devedor %>
        
        
        <%totalparcela = totalparcela + (amortizacao + (taxa * (valor - (x * amortizacao))));%>
        <%totaljuro = totaljuro + (outrovalor*taxa);%>
-       <%outrovalor = outrovalor - amortizacao;%>
+       <%outrovalor = outrovalor - amortizacao;%> <%// mostrar saldo devedor%>  
        
        <%x++;%>
     </tr>
@@ -127,9 +127,9 @@ input[type=submit] {
   
   <td align="center" valign="middle">TOTAL </td>
   <td align="center" valign="middle"><%=totalparcela%></td>
-  <td align="center" valign="middle"></td>
+  <td align="center" valign="middle"><%="-"%></td>
   <td align="center" valign="middle"><%=totaljuro%></td>
-  <td align="center" valign="middle"></td>
+  <td align="center" valign="middle"><%="-"%></td>
         </table>
         <%}%><br><br><br><br><br><br><br><br><br>
          <div class="footer">
